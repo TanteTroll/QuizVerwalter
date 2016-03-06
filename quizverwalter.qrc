@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/QuizVerwalter">
+        <file alias="Team">Resources/Teams.xml</file>
+        <file>Resources/Quiz.xml</file>
+    </qresource>
+</RCC>

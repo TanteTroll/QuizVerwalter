@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Teams NumberOfTeams="3">
+    <Team Teamname="2Man" NumberOfTeamMembers="2">
+        <Spieler>ff</Spieler>
+        <Spieler>ff</Spieler>
+    </Team>
+    <Team Teamname="Teamdread" NumberOfTeamMembers="2">
+        <Spieler>asd</Spieler>
+        <Spieler>asd</Spieler>
+    </Team>
+    <Team Teamname="Holymakaronie" NumberOfTeamMembers="1">
+        <Spieler>new Player</Spieler>
+    </Team>
+</Teams>
