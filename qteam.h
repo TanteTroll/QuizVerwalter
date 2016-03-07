@@ -14,6 +14,7 @@ class QTeam : public QObject
 	Q_OBJECT
 
 public:
+	static std::vector<QString> badNames; //TODO safe in xml
 	std::vector <QString> TeamMembers;
 	QString TeamName;
 

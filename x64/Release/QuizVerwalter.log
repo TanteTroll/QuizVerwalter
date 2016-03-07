@@ -1,2 +1,16 @@
-﻿  qteam.cpp
-  QuizVerwalter.vcxproj -> C:\Users\Konstantin\documents\visual studio 2015\Projects\QuizVerwalter\x64\Release\QuizVerwalter.exe
+﻿  Moc'ing quizverwalter.h...
+  Moc'ing qteam.h...
+  Moc'ing qquiz.h...
+  Moc'ing points.h...
+  moc_points.cpp
+  moc_qquiz.cpp
+  moc_qteam.cpp
+  moc_quizverwalter.cpp
+  main.cpp
+  points.cpp
+points.cpp(61): error C2664: "QMetaObject::Connection QObject::connect(const QObject *,const char *,const char *,Qt::ConnectionType) const" : Konvertierung von Argument 2 von "overloaded-function" in "const char *" nicht möglich
+  points.cpp(61): note: Der Kontext ermöglicht keine Eindeutigkeit für überladene Funktionen
+  qquiz.cpp
+  qteam.cpp
+  quizverwalter.cpp
+  Code wird generiert...

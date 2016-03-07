@@ -35,7 +35,7 @@ public:
     QVBoxLayout *verticalLayout;
     QPushButton *pushButtonTeams;
     QPushButton *pushButtonQuiz;
-    QPushButton *pushButtonData;
+    QPushButton *pushButtonErgebnis;
     QPushButton *pushButtonSave;
     QSpacerItem *verticalSpacer;
     QWidget *contentWidget;
@@ -70,10 +70,10 @@ public:
 
         verticalLayout->addWidget(pushButtonQuiz);
 
-        pushButtonData = new QPushButton(widget);
-        pushButtonData->setObjectName(QStringLiteral("pushButtonData"));
+        pushButtonErgebnis = new QPushButton(widget);
+        pushButtonErgebnis->setObjectName(QStringLiteral("pushButtonErgebnis"));
 
-        verticalLayout->addWidget(pushButtonData);
+        verticalLayout->addWidget(pushButtonErgebnis);
 
         pushButtonSave = new QPushButton(widget);
         pushButtonSave->setObjectName(QStringLiteral("pushButtonSave"));
@@ -116,7 +116,7 @@ public:
         QuizVerwalterClass->setWindowTitle(QApplication::translate("QuizVerwalterClass", "QuizVerwalter", 0));
         pushButtonTeams->setText(QApplication::translate("QuizVerwalterClass", "Teams", 0));
         pushButtonQuiz->setText(QApplication::translate("QuizVerwalterClass", "Quiz", 0));
-        pushButtonData->setText(QApplication::translate("QuizVerwalterClass", "Data", 0));
+        pushButtonErgebnis->setText(QApplication::translate("QuizVerwalterClass", "Ergebnis", 0));
         pushButtonSave->setText(QApplication::translate("QuizVerwalterClass", "Save", 0));
     } // retranslateUi
 

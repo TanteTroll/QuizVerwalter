@@ -1,6 +1,7 @@
 #include "quizverwalter.h"
 #include "qteam.h"
 #include "qquiz.h"
+#include "points.h"
 
 QuizVerwalter::QuizVerwalter(QWidget *parent)
 	: QMainWindow(parent)
@@ -8,9 +9,13 @@ QuizVerwalter::QuizVerwalter(QWidget *parent)
 	ui.setupUi(this);
 
 	teams = new QTeams();
-	quiz = new QQuiz();
-	quiz->ui_view(ui.contentWidget);
+	quizs = new QQuizs();
+	point = new Points(teams, quizs);
+
+	point->ui_view(ui.contentWidget);
+
 	connect(ui.pushButtonSave, &QPushButton::clicked, teams, &QTeams::saveToXml);
+	connect(ui.pushButtonSave, &QPushButton::clicked, quizs, &QQuizs::saveToXml);
 }
 
 QuizVerwalter::~QuizVerwalter()
@@ -24,5 +29,5 @@ void QuizVerwalter::on_pushButtonTeams_clicked()
 }
 void QuizVerwalter::on_pushButtonQuiz_clicked()
 {
-	quiz->ui_view(ui.contentWidget);
+	quizs->ui_view(ui.contentWidget);
 }

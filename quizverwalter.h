@@ -5,7 +5,10 @@
 #include "ui_quizverwalter.h"
 #include "qteam.h"
 #include "qquiz.h"
-
+#include "points.h"
+//TODO QQUIZ
+//TODO QDATA
+//TODO QVISUAL
 class QuizVerwalter : public QMainWindow
 {
 	Q_OBJECT
@@ -21,7 +24,8 @@ private:
 	Ui::QuizVerwalterClass ui;
 
 	QTeams *teams = NULL;
-	QQuiz *quiz = NULL;
+	QQuizs *quizs = NULL;
+	Points *point = NULL;
 };
 
 #endif // QUIZVERWALTER_H

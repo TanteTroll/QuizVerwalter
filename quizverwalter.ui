@@ -33,9 +33,9 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButtonData">
+        <widget class="QPushButton" name="pushButtonErgebnis">
          <property name="text">
-          <string>Data</string>
+          <string>Ergebnis</string>
          </property>
         </widget>
        </item>

@@ -1,5 +1,6 @@
 #include "qteam.h"
 #include <vector>
+#include <algorithm>
 
 // Qt 
 #include <QDebug>
@@ -21,6 +22,7 @@
 #include <QFile>
 
 
+std::vector <QString> QTeam::badNames{ "niggers" };
 
 QTeam::QTeam(QObject *parent)
 	:QObject(parent)
@@ -44,8 +46,14 @@ void qClearWidget(QWidget * ui)
 }
 void QTeam::setTeamName(const QString str)
 {
-	this->TeamName = str;
-	emit nameChange(str);
+	if (std::find(badNames.begin(), badNames.end(), str) != badNames.end()) {
+		qDebug() << "bad Name" << str;
+	}
+	else {
+		this->TeamName = str;
+		emit nameChange(str);
+	}
+	
 }
 
 /// <summary>
@@ -237,8 +245,8 @@ void QTeams::saveToXml()
 	QFile file("Resources/Teams.xml");
 	file.open(QIODevice::WriteOnly);
 
-	if (!file.isOpen()) { qDebug("Cannot open File!"); return; }
-	qDebug("File opened!");
+	if (!file.isOpen()) { qDebug("Cannot open File! (teams)"); return; }
+	qDebug("File opened! (teams)");
 
 	QXmlStreamWriter xmlWriter(&file);
 	xmlWriter.setAutoFormatting(true);
