@@ -27,8 +27,9 @@ public slots:
 private:
 	QTeams *teams;
 	QQuizs *quizs;
-	std::vector<QCheckBox*> selectedTeams;
-	int selectedTeams_number();
+	std::vector<QCheckBox*> checkbox;
+	std::vector<QCheckBox*> selectedCheckbox;
+	void searchSelectedTeams();
 
 
 	QTableWidget *table;

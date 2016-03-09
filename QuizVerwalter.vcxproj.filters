@@ -74,6 +74,15 @@
     <ClCompile Include="GeneratedFiles\Release\moc_points.cpp">
       <Filter>Generierte Dateien\Release</Filter>
     </ClCompile>
+    <ClCompile Include="myiovector.cpp">
+      <Filter>Source Dateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_myiovector.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_myiovector.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="quizverwalter.h">
@@ -92,6 +101,9 @@
       <Filter>Header Dateien</Filter>
     </CustomBuild>
     <CustomBuild Include="points.h">
+      <Filter>Header Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="myiovector.h">
       <Filter>Header Dateien</Filter>
     </CustomBuild>
   </ItemGroup>

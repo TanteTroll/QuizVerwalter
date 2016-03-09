@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Quizs NumberOfQuiz="2">
     <Quiz Quizname="uberquiz vom 16.03" NumberOfKat="2">
-        <Kategorie Kategoriename="Geo" AnzahlKategorien="3">
+        <Kategorie Kategoriename="Geo" AnzahlKategorien="2">
             <Frage>Wo ist Berlin</Frage>
             <Frage>Wo ist Frankfurt</Frage>
         </Kategorie>

@@ -3,6 +3,8 @@
 #include "qquiz.h"
 #include "points.h"
 
+#include "myiovector.h"
+
 QuizVerwalter::QuizVerwalter(QWidget *parent)
 	: QMainWindow(parent)
 {
@@ -11,8 +13,8 @@ QuizVerwalter::QuizVerwalter(QWidget *parent)
 	teams = new QTeams();
 	quizs = new QQuizs();
 	point = new Points(teams, quizs);
+	MyIoVector *herp = new MyIoVector(ui.contentWidget, &test, &str);
 
-	point->ui_view(ui.contentWidget);
 
 	connect(ui.pushButtonSave, &QPushButton::clicked, teams, &QTeams::saveToXml);
 	connect(ui.pushButtonSave, &QPushButton::clicked, quizs, &QQuizs::saveToXml);
@@ -30,4 +32,8 @@ void QuizVerwalter::on_pushButtonTeams_clicked()
 void QuizVerwalter::on_pushButtonQuiz_clicked()
 {
 	quizs->ui_view(ui.contentWidget);
+}
+void QuizVerwalter::on_pushButtonErgebnis_clicked()
+{
+	point->ui_view(ui.contentWidget);
 }

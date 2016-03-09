@@ -53,7 +53,6 @@ void Points::ui_view(QWidget * ui)
 	QComboBox *quizauswahl = new QComboBox(ui);
 	quizauswahl->addItem("Select a Quiz");
 	layout->addWidget(quizauswahl);
-	qDebug() << quizs->quizList.size();
 	for (int i = 0; i < quizs->quizList.size(); i++)
 	{
 		quizauswahl->addItem(quizs->quizList.at(i)->name);
@@ -63,11 +62,11 @@ void Points::ui_view(QWidget * ui)
 	QHBoxLayout *layout_participants = new QHBoxLayout;
 	layout->addLayout(layout_participants);
 
-	selectedTeams.clear();
+	checkbox.clear();
 	for (int i = 0; i < teams->teamNames.size(); i++)
 	{
 		QCheckBox *cb = new QCheckBox(ui);
-		selectedTeams.push_back(cb);
+		checkbox.push_back(cb);
 		cb->setText(teams->teamNames.at(i)->TeamName);
 		layout_participants->addWidget(cb);
 	}
@@ -78,33 +77,46 @@ void Points::ui_view(QWidget * ui)
 
 void Points::paintTable(const int i)
 {
-	if (i == 0 || selectedTeams_number() == 0)
+	searchSelectedTeams();
+	if (i == 0 || selectedCheckbox.size() == 0)
 		return;
 
-	int rowNumber = 1 ;
-	for (int j = 0; j < quizs->quizList.at(i - 1)->Katalog.size(); j++)
+	int rowNumber = quizs->quizList.at(i - 1)->Katalog.size() + 1;
+	for (int j = 1; j < quizs->quizList.at(i - 1)->Katalog.size(); j++)
 	{
-		rowNumber += quizs->quizList.at(i - 1)->Katalog.at(j).Frage.size();
-		rowNumber ++;
+		rowNumber += quizs->quizList.at(i - 1)->Katalog.at(j).Frage.size()+1;
 	}
 
-	qDebug() << rowNumber; qDebug() << 2 + selectedTeams_number();
 	table->setRowCount(rowNumber);
-	table->setColumnCount(2 + selectedTeams_number());
+	table->setColumnCount(selectedCheckbox.size() );
 
-	for (int hLabels = 0; hLabels < selectedTeams_number(); hLabels++ )
+	QStringList hLabels;
+	for (int k = 0; k < selectedCheckbox.size(); k++ )
 	{
-		QTableWidgetItem();//TODO
-	}
-}
-int Points::selectedTeams_number()
-{
-	int number = 0;
-	for (int i = 0; i < selectedTeams.size(); i++)
-	{
-		if (selectedTeams.at(i)->isChecked() == true)
-			number = number +1;
+		hLabels.push_back(selectedCheckbox.at(k)->text());
 	}
 	
-	return number;
+	QStringList vLabels;
+	for (int k = 0; k < quizs->quizList.at(i - 1)->Katalog.size(); k++ )
+	{
+		vLabels.push_back(quizs->quizList.at(i - 1)->Katalog.at(i).name);
+		for (int j = 0; j < quizs->quizList.at(i - 1)->Katalog.at(k).Frage.size(); j++)
+		{
+			QString tmp = "      " + quizs->quizList.at(i - 1)->Katalog.at(k).Frage.at(j);
+			vLabels.push_back(tmp);
+		}
+	}
+
+	table->setVerticalHeaderLabels(vLabels);
+	table->setHorizontalHeaderLabels(hLabels);
+}
+
+void Points::searchSelectedTeams()
+{
+	selectedCheckbox.clear();
+	for (int i = 0; i < checkbox.size(); i++)
+	{
+		if (checkbox.at(i)->isChecked() == true)
+			selectedCheckbox.push_back(checkbox.at(i));
+	}
 }

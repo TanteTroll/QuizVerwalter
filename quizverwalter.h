@@ -19,6 +19,7 @@ public:
 public slots:
 	void on_pushButtonTeams_clicked();
 	void on_pushButtonQuiz_clicked();
+	void on_pushButtonErgebnis_clicked();
 
 private:
 	Ui::QuizVerwalterClass ui;
@@ -26,6 +27,9 @@ private:
 	QTeams *teams = NULL;
 	QQuizs *quizs = NULL;
 	Points *point = NULL;
+
+	std::vector<QString> test;
+	QString str;
 };
 
 #endif // QUIZVERWALTER_H

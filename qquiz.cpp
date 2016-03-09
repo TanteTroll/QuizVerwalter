@@ -162,6 +162,11 @@ void QQuiz::ui_view(QWidget * ui_)
 	
 }
 
+int QQuiz::numberOfQuestions()
+{
+	return 0;
+}
+
 void QQuiz::setKat(const QString str)
 {
 	QObject *obj = QObject::sender();

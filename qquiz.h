@@ -31,8 +31,9 @@ public:
 	QString name ="new";
 
 	void ui_view(QWidget *ui_);
+	int numberOfQuestions();
 	void deleteEmpty();
-
+	
 public slots:
 	void setName(const QString str);
 	void setKat(const QString str);
@@ -43,12 +44,12 @@ signals:
 	void nameChange(QString str);
 
 private:
-	QWidget * ui;//QWidget oder QScrollArea
-	QWidget *dynamic;
-	QScrollArea *area;
+	QWidget * ui = NULL;
+	QWidget *dynamic = NULL;
+	QScrollArea *area = NULL;
 	QVBoxLayout *layout_content = NULL;
-	
 	QList < QWidget* > FragenWidgets;
+
 	
 };
 
