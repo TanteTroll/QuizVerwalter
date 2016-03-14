@@ -18,6 +18,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
@@ -38,7 +39,8 @@ public:
     QPushButton *pushButtonErgebnis;
     QPushButton *pushButtonSave;
     QSpacerItem *verticalSpacer;
-    QWidget *contentWidget;
+    QScrollArea *contentWidget;
+    QWidget *scrollWidget;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -87,13 +89,18 @@ public:
 
         horizontalLayout->addWidget(widget);
 
-        contentWidget = new QWidget(centralWidget);
+        contentWidget = new QScrollArea(centralWidget);
         contentWidget->setObjectName(QStringLiteral("contentWidget"));
+        contentWidget->setWidgetResizable(true);
+        scrollWidget = new QWidget();
+        scrollWidget->setObjectName(QStringLiteral("scrollWidget"));
+        scrollWidget->setGeometry(QRect(0, 0, 459, 327));
+        contentWidget->setWidget(scrollWidget);
 
         horizontalLayout->addWidget(contentWidget);
 
-        horizontalLayout->setStretch(0, 1);
-        horizontalLayout->setStretch(1, 9);
+        horizontalLayout->setStretch(0, 2);
+        horizontalLayout->setStretch(1, 8);
         QuizVerwalterClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(QuizVerwalterClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));

@@ -4,6 +4,7 @@
 #include "points.h"
 
 #include "myiovector.h"
+#include "myiovector2d.h"
 
 QuizVerwalter::QuizVerwalter(QWidget *parent)
 	: QMainWindow(parent)
@@ -13,8 +14,10 @@ QuizVerwalter::QuizVerwalter(QWidget *parent)
 	teams = new QTeams();
 	quizs = new QQuizs();
 	point = new Points(teams, quizs);
-	MyIoVector *herp = new MyIoVector(ui.contentWidget, &test, &str);
-
+	MyIoVector2D *herp = new MyIoVector2D(ui.scrollWidget, &target_data_master, &target_data_slave, NULL,1);
+	QHBoxLayout *local_layout = new QHBoxLayout(ui.scrollWidget);
+	local_layout->addWidget(herp);
+	
 
 	connect(ui.pushButtonSave, &QPushButton::clicked, teams, &QTeams::saveToXml);
 	connect(ui.pushButtonSave, &QPushButton::clicked, quizs, &QQuizs::saveToXml);

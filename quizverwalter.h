@@ -30,6 +30,9 @@ private:
 
 	std::vector<QString> test;
 	QString str;
+
+	std::vector<QString> target_data_master;
+	std::vector<std::vector<QString>*> target_data_slave;
 };
 
 #endif // QUIZVERWALTER_H

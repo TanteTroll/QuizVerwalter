@@ -1,6 +1,6 @@
-﻿  Moc'ing myiovector.h...
-  moc_myiovector.cpp
-  myiovector.cpp
+﻿  Uic'ing quizverwalter.ui...
+  moc_quizverwalter.cpp
+  main.cpp
   quizverwalter.cpp
   Code wird generiert...
   QuizVerwalter.vcxproj -> C:\Users\Konstantin\documents\visual studio 2015\Projects\QuizVerwalter\x64\Debug\QuizVerwalter.exe

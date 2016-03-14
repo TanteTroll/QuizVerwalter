@@ -67,7 +67,7 @@ void Points::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         Points *_t = static_cast<Points *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->paintTable((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 0: _t->paintTable((*reinterpret_cast< const int(*)>(_a[1]))); break;
         default: ;
         }
     }
