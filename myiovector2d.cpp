@@ -6,7 +6,7 @@
 #include <QLineEdit>
 #include <QDebug>
 
-MyIoVector2D::MyIoVector2D(QWidget *target_ui, std::vector<QString> *target_data_master, std::vector<std::vector<QString>*> *target_data_slave,
+MyIoVector2D::MyIoVector2D(QWidget *target_ui, std::vector<QString> *target_data_master, std::vector<std::vector<QString>> *target_data_slave,
 	QString *name_, uint8_t flags)
 	: MyIo(target_ui, name_, flags),  data_master(target_data_master), data_slave(target_data_slave)
 {
@@ -18,9 +18,7 @@ MyIoVector2D::MyIoVector2D(QWidget *target_ui, std::vector<QString> *target_data
 
 void MyIoVector2D::initVector()
 {
-	if (!data_master)data_master = new std::vector<QString>;
-	if (!data_slave)data_slave = new std::vector<std::vector<QString>*>;
-	Q_ASSERT(data_master);
+	Q_ASSERT(data_master); 
 	Q_ASSERT(data_slave);
 
 	for (size_t i = 0; i <= data_master->size(); i++)
@@ -35,14 +33,13 @@ void MyIoVector2D::initVector()
 		line->setProperty("id", i);
 		line->setMinimumHeight(60);
 		
-		local_layout->addWidget(line);
+		local_layout->addWidget(line, 2);
 
 		if (i < data_master->size()) {
-			MyIoVector *vect = new MyIoVector(this, data_slave->at(i));
-			local_layout->addWidget(vect);
+			MyIoVector *vect = new MyIoVector(this, &data_slave->at(i));
+			local_layout->addWidget(vect, 8);
 			line->setText(data_master->at(i));
 		}
-
 		localLayout.push_back(local_layout);
 		
 		connect(line, &QLineEdit::textChanged, this, &MyIoVector2D::setValue);
@@ -54,7 +51,6 @@ void MyIoVector2D::initVector()
 
 void MyIoVector2D::setValue(const QString str)
 {
-	qDebug() << str;
 	QLineEdit *thisButton = qobject_cast<QLineEdit *>(QObject::sender());
 
 	Q_ASSERT(thisButton);
@@ -82,13 +78,13 @@ void MyIoVector2D::setValue(const QString str)
 		line->setSizePolicy(sizePolicy);
 		line->setProperty("id", i + 1);
 		line->setMinimumHeight(60);
-		local_layout->addWidget(line);
+		local_layout->addWidget(line, 2);
 
 		// add Vector
-		std::vector<QString> * neu = NULL;
+		std::vector<QString> neu = { "" };
 		data_slave->push_back(neu);
-		MyIoVector *vect = new MyIoVector(this, data_slave->at(i));
-		qobject_cast<QHBoxLayout *>(localLayout.at(i))->addWidget(vect);
+		MyIoVector *vect = new MyIoVector(this, &data_slave->at(i));
+		qobject_cast<QHBoxLayout *>(localLayout.at(i))->addWidget(vect, 8);
 
 
 		localLayout.push_back(local_layout);

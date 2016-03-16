@@ -18,7 +18,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
@@ -39,8 +38,7 @@ public:
     QPushButton *pushButtonErgebnis;
     QPushButton *pushButtonSave;
     QSpacerItem *verticalSpacer;
-    QScrollArea *contentWidget;
-    QWidget *scrollWidget;
+    QWidget *contentWidget;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -89,13 +87,8 @@ public:
 
         horizontalLayout->addWidget(widget);
 
-        contentWidget = new QScrollArea(centralWidget);
+        contentWidget = new QWidget(centralWidget);
         contentWidget->setObjectName(QStringLiteral("contentWidget"));
-        contentWidget->setWidgetResizable(true);
-        scrollWidget = new QWidget();
-        scrollWidget->setObjectName(QStringLiteral("scrollWidget"));
-        scrollWidget->setGeometry(QRect(0, 0, 459, 327));
-        contentWidget->setWidget(scrollWidget);
 
         horizontalLayout->addWidget(contentWidget);
 

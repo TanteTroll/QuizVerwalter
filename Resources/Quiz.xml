@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Quizs NumberOfQuiz="2">
-    <Quiz Quizname="uberquiz vom 16.03" NumberOfKat="2">
-        <Kategorie Kategoriename="Geo" AnzahlKategorien="2">
-            <Frage>Wo ist Berlin</Frage>
-            <Frage>Wo ist Frankfurt</Frage>
-        </Kategorie>
-        <Kategorie Kategoriename="was sit legit" AnzahlKategorien="2">
-            <Frage>qwe</Frage>
-            <Frage>qwe</Frage>
-        </Kategorie>
-    </Quiz>
-    <Quiz Quizname="Useless Quiz" NumberOfKat="1">
-        <Kategorie Kategoriename="Wer kann das denn" AnzahlKategorien="1">
-            <Frage>holy</Frage>
+<Quizs NumberOfQuiz="1">
+    <Quiz Quizname="new" NumberOfKat="1">
+        <Kategorie Kategoriename="l" AnzahlKategorien="4">
+            <Frage>l</Frage>
+            <Frage>l</Frage>
+            <Frage>l</Frage>
+            <Frage>l</Frage>
         </Kategorie>
     </Quiz>
 </Quizs>

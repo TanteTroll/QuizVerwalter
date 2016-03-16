@@ -1,14 +1,23 @@
 #ifndef QQUIZ_H
 #define QQUIZ_H
 
-#include <QObject>
+// C++
 #include <vector>
+
+// core qt
+#include <QObject>
 #include <QWidget>
-#include <QVBoxLayout>
 #include <QString>
-#include <QPushButton>
 #include <QList>
+
+// widgets
+#include <QTabWidget>
 #include <QScrollArea>
+#include <QLayout>
+
+//xml
+#include <QtXml>
+
 
 class QQuiz : public QObject
 {
@@ -16,28 +25,23 @@ class QQuiz : public QObject
 
 public:
 	static std::vector<QString> badNames; //TODO safe in xml
-	struct Kategorie
-	{
-		QString name;
-		std::vector<QString> Frage;
-	};
-
-
-
+	
 	QQuiz(QObject *parent = 0);
 	~QQuiz();
 
-	std::vector<Kategorie> Katalog;
+	std::vector<QString> kategorieNamen;
+	std::vector<std::vector<QString>> fragen; 
+	// auﬂen : Kategorie Nummer
+	// innen: Fragen
+
 	QString name ="new";
 
+	void writeToXml(QXmlStreamWriter *xmlWriter);
 	void ui_view(QWidget *ui_);
-	int numberOfQuestions();
 	void deleteEmpty();
 	
 public slots:
 	void setName(const QString str);
-	void setKat(const QString str);
-	void setQues(const QString str);
 	
 
 signals:
@@ -48,7 +52,7 @@ private:
 	QWidget *dynamic = NULL;
 	QScrollArea *area = NULL;
 	QVBoxLayout *layout_content = NULL;
-	QList < QWidget* > FragenWidgets;
+	
 
 	
 };
@@ -65,20 +69,20 @@ public:
 	void readFromXml();
 	void deleteEmpty();
 	void ui_view(QWidget *ui);
+	
 
 
 public slots:
-	void editQuiz();
+	void tabClicked(const int i);
 	void saveToXml();
 
 private:
-	QWidget * ui_buttons;
-	QWidget * ui_content;
-	QHBoxLayout *layout_team;
+	QWidget * ui = NULL;
+	QVBoxLayout *layout = NULL;
+	QTabWidget *tabs = NULL;
 
-	QPushButton *thisButton;
-	QPushButton *lastButton = NULL;
-
+	void newTab();
+	QList < QWidget* > tabList;
 };
 
 #endif // QQUIZ_H

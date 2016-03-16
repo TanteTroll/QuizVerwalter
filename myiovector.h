@@ -20,15 +20,11 @@ public slots:
 
 	void setValue(const QString str);
 
-
-
 private:
 	std::vector<QString> *data = NULL;
 	std::vector<QString> *labels = NULL;
 	
-
 	void initVector();
-	
 };
 
 #endif // MYIOVECTOR_H

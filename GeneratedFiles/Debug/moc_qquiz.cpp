@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_QQuiz_t {
-    QByteArrayData data[7];
-    char stringdata0[45];
+    QByteArrayData data[5];
+    char stringdata0[30];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,13 +33,10 @@ QT_MOC_LITERAL(0, 0, 5), // "QQuiz"
 QT_MOC_LITERAL(1, 6, 10), // "nameChange"
 QT_MOC_LITERAL(2, 17, 0), // ""
 QT_MOC_LITERAL(3, 18, 3), // "str"
-QT_MOC_LITERAL(4, 22, 7), // "setName"
-QT_MOC_LITERAL(5, 30, 6), // "setKat"
-QT_MOC_LITERAL(6, 37, 7) // "setQues"
+QT_MOC_LITERAL(4, 22, 7) // "setName"
 
     },
-    "QQuiz\0nameChange\0\0str\0setName\0setKat\0"
-    "setQues"
+    "QQuiz\0nameChange\0\0str\0setName"
 };
 #undef QT_MOC_LITERAL
 
@@ -49,7 +46,7 @@ static const uint qt_meta_data_QQuiz[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -57,19 +54,15 @@ static const uint qt_meta_data_QQuiz[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   34,    2, 0x06 /* Public */,
+       1,    1,   24,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    1,   37,    2, 0x0a /* Public */,
-       5,    1,   40,    2, 0x0a /* Public */,
-       6,    1,   43,    2, 0x0a /* Public */,
+       4,    1,   27,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::QString,    3,
-    QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
 
        0        // eod
@@ -83,8 +76,6 @@ void QQuiz::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         switch (_id) {
         case 0: _t->nameChange((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 1: _t->setName((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 2: _t->setKat((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 3: _t->setQues((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -124,13 +115,13 @@ int QQuiz::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 4;
+        _id -= 2;
     }
     return _id;
 }
@@ -142,8 +133,8 @@ void QQuiz::nameChange(QString _t1)
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 struct qt_meta_stringdata_QQuizs_t {
-    QByteArrayData data[4];
-    char stringdata0[27];
+    QByteArrayData data[5];
+    char stringdata0[31];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -153,12 +144,13 @@ struct qt_meta_stringdata_QQuizs_t {
 static const qt_meta_stringdata_QQuizs_t qt_meta_stringdata_QQuizs = {
     {
 QT_MOC_LITERAL(0, 0, 6), // "QQuizs"
-QT_MOC_LITERAL(1, 7, 8), // "editQuiz"
-QT_MOC_LITERAL(2, 16, 0), // ""
-QT_MOC_LITERAL(3, 17, 9) // "saveToXml"
+QT_MOC_LITERAL(1, 7, 10), // "tabClicked"
+QT_MOC_LITERAL(2, 18, 0), // ""
+QT_MOC_LITERAL(3, 19, 1), // "i"
+QT_MOC_LITERAL(4, 21, 9) // "saveToXml"
 
     },
-    "QQuizs\0editQuiz\0\0saveToXml"
+    "QQuizs\0tabClicked\0\0i\0saveToXml"
 };
 #undef QT_MOC_LITERAL
 
@@ -176,11 +168,11 @@ static const uint qt_meta_data_QQuizs[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x0a /* Public */,
-       3,    0,   25,    2, 0x0a /* Public */,
+       1,    1,   24,    2, 0x0a /* Public */,
+       4,    0,   27,    2, 0x0a /* Public */,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    3,
     QMetaType::Void,
 
        0        // eod
@@ -192,12 +184,11 @@ void QQuizs::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         QQuizs *_t = static_cast<QQuizs *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->editQuiz(); break;
+        case 0: _t->tabClicked((*reinterpret_cast< const int(*)>(_a[1]))); break;
         case 1: _t->saveToXml(); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject QQuizs::staticMetaObject = {

@@ -77,38 +77,38 @@ void Points::ui_view(QWidget * ui)
 
 void Points::paintTable(const int i)
 {
-	searchSelectedTeams();
-	if (i == 0 || selectedCheckbox.size() == 0)
-		return;
+	//searchSelectedTeams();
+	//if (i == 0 || selectedCheckbox.size() == 0)
+	//	return;
 
-	int rowNumber = quizs->quizList.at(i - 1)->Katalog.size() + 1;
-	for (int j = 1; j < quizs->quizList.at(i - 1)->Katalog.size(); j++)
-	{
-		rowNumber += quizs->quizList.at(i - 1)->Katalog.at(j).Frage.size()+1;
-	}
+	//int rowNumber = quizs->quizList.at(i - 1)->Katalog.size() + 1;
+	//for (int j = 1; j < quizs->quizList.at(i - 1)->Katalog.size(); j++)
+	//{
+	//	rowNumber += quizs->quizList.at(i - 1)->Katalog.at(j).Frage.size()+1;
+	//}
 
-	table->setRowCount(rowNumber);
-	table->setColumnCount(selectedCheckbox.size() );
+	//table->setRowCount(rowNumber);
+	//table->setColumnCount(selectedCheckbox.size() );
 
-	QStringList hLabels;
-	for (int k = 0; k < selectedCheckbox.size(); k++ )
-	{
-		hLabels.push_back(selectedCheckbox.at(k)->text());
-	}
-	
-	QStringList vLabels;
-	for (int k = 0; k < quizs->quizList.at(i - 1)->Katalog.size(); k++ )
-	{
-		vLabels.push_back(quizs->quizList.at(i - 1)->Katalog.at(i).name);
-		for (int j = 0; j < quizs->quizList.at(i - 1)->Katalog.at(k).Frage.size(); j++)
-		{
-			QString tmp = "      " + quizs->quizList.at(i - 1)->Katalog.at(k).Frage.at(j);
-			vLabels.push_back(tmp);
-		}
-	}
+	//QStringList hLabels;
+	//for (int k = 0; k < selectedCheckbox.size(); k++ )
+	//{
+	//	hLabels.push_back(selectedCheckbox.at(k)->text());
+	//}
+	//
+	//QStringList vLabels;
+	//for (int k = 0; k < quizs->quizList.at(i - 1)->Katalog.size(); k++ )
+	//{
+	//	vLabels.push_back(quizs->quizList.at(i - 1)->Katalog.at(i).name);
+	//	for (int j = 0; j < quizs->quizList.at(i - 1)->Katalog.at(k).Frage.size(); j++)
+	//	{
+	//		QString tmp = "      " + quizs->quizList.at(i - 1)->Katalog.at(k).Frage.at(j);
+	//		vLabels.push_back(tmp);
+	//	}
+	//}
 
-	table->setVerticalHeaderLabels(vLabels);
-	table->setHorizontalHeaderLabels(hLabels);
+	//table->setVerticalHeaderLabels(vLabels);
+	//table->setHorizontalHeaderLabels(hLabels);
 }
 
 void Points::searchSelectedTeams()

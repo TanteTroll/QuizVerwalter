@@ -63,21 +63,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QScrollArea" name="contentWidget">
-      <property name="widgetResizable">
-       <bool>true</bool>
-      </property>
-      <widget class="QWidget" name="scrollWidget">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>459</width>
-         <height>327</height>
-        </rect>
-       </property>
-      </widget>
-     </widget>
+     <widget class="QWidget" name="contentWidget" native="true"/>
     </item>
    </layout>
   </widget>

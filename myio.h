@@ -19,7 +19,7 @@ class MyIo : public QWidget
 	Q_OBJECT
 
 public:
-	const uint8_t todo = 0x01; //TODO 
+	static const uint8_t scrollArea = 0x01; //TODO 
 
 	uint8_t flags = 0;
 
@@ -43,6 +43,8 @@ protected:
 private:
 	QLineEdit *name_edit = NULL;
 	QHBoxLayout *name_layout = NULL;
+	QHBoxLayout *area_layout = NULL;
+	QWidget * area_widget = NULL;
 	QString *name = NULL;
 	QScrollArea *area = NULL;
 };

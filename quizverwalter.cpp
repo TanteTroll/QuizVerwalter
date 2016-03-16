@@ -14,10 +14,11 @@ QuizVerwalter::QuizVerwalter(QWidget *parent)
 	teams = new QTeams();
 	quizs = new QQuizs();
 	point = new Points(teams, quizs);
-	MyIoVector2D *herp = new MyIoVector2D(ui.scrollWidget, &target_data_master, &target_data_slave, NULL,1);
-	QHBoxLayout *local_layout = new QHBoxLayout(ui.scrollWidget);
-	local_layout->addWidget(herp);
+
+	quizs->ui_view(ui.contentWidget);
 	
+	
+
 
 	connect(ui.pushButtonSave, &QPushButton::clicked, teams, &QTeams::saveToXml);
 	connect(ui.pushButtonSave, &QPushButton::clicked, quizs, &QQuizs::saveToXml);
@@ -38,5 +39,6 @@ void QuizVerwalter::on_pushButtonQuiz_clicked()
 }
 void QuizVerwalter::on_pushButtonErgebnis_clicked()
 {
+
 	point->ui_view(ui.contentWidget);
 }

@@ -34,9 +34,25 @@ void MyIo::initLayouts()
 {
 	if (!ui_layout) ui_layout = new QVBoxLayout(this);
 	if (!name_layout) name_layout = new QHBoxLayout;
-	if (!entry_layout) entry_layout = new QGridLayout;
 
 	ui_layout->addLayout(name_layout);
+
+	if (flags & scrollArea)
+	{
+		if (!area)area = new QScrollArea(this);
+		if(!area_widget) area_widget = new QWidget;
+		area->setWidget(area_widget);
+		area->setStyleSheet("background-color:transparent;");
+
+		QVBoxLayout *tmp = new QVBoxLayout(area);
+		tmp->addWidget(area_widget);
+
+		if (!entry_layout) entry_layout = new QGridLayout(area_widget);
+		ui_layout->addWidget(area);
+	}
+	else {
+		if (!entry_layout) entry_layout = new QGridLayout;
+	}
 	ui_layout->addLayout(entry_layout);
 
 	ui_layout->setAlignment(Qt::AlignTop | Qt::AlignLeft);
